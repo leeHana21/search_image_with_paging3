@@ -6,8 +6,6 @@
     <option name="hotkeyHeatup" value="false" />
     <option name="isBamEnabled" value="false" />
     <option name="isPowerIndicatorEnabled" value="false" />
-    <option name="shakeEnabled" value="true" />
     <option name="soundsFolder" value="C:\Program Files\Android\Android Studio\jre\bin" />
-    <option name="sparksEnabled" value="false" />
   </component>
 </application>
