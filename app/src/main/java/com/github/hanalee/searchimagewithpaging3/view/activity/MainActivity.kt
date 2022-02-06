@@ -1,6 +1,7 @@
 package com.github.hanalee.searchimagewithpaging3.view.activity
 
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
@@ -29,14 +30,16 @@ class MainActivity : AppCompatActivity() {
     private val mainViewModel: MainViewModel by viewModel()
     private val searchImageAdapter: SearchImageAdapter by inject()
     private val searchImageLoadStateAdapter: SearchImageLoadStateAdapter by inject()
+
     private lateinit var binding: ActivityMainBinding
+    private lateinit var inputMethodManager: InputMethodManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         initView()
         initObserver()
-
     }
 
     private fun initObserver() = with(mainViewModel) {
@@ -82,6 +85,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateListWithNewKeyword() {
         binding.etSearch.text.trim().toString().let {
             if (it.isNotBlank()) {
+                inputMethodManager.hideSoftInputFromWindow(binding.etSearch.windowToken, 0)
                 mainViewModel.keywordByUser(keyword = it)
             }
         }
