@@ -1,0 +1,13 @@
+<application>
+  <component name="PowerModeII">
+    <option name="customBamImageFolder" value="C:\Program Files\Android\Android Studio\jre\bin" />
+    <option name="customFlameImageFolder" value="C:\Program Files\Android\Android Studio\jre\bin" />
+    <option name="enabled" value="false" />
+    <option name="flamesEnabled" value="false" />
+    <option name="hotkeyHeatup" value="false" />
+    <option name="isBamEnabled" value="false" />
+    <option name="isPowerIndicatorEnabled" value="false" />
+    <option name="soundsFolder" value="C:\Program Files\Android\Android Studio\jre\bin" />
+    <option name="sparksEnabled" value="false" />
+  </component>
+</application>
