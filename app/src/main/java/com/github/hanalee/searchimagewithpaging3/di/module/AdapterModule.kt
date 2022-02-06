@@ -1,11 +1,10 @@
 package com.github.hanalee.searchimagewithpaging3.di.module
 
-import com.github.hanalee.searchimagewithpaging3.adapter.MainAdapter
-import com.github.hanalee.searchimagewithpaging3.adapter.SubAdapter
+import com.github.hanalee.searchimagewithpaging3.view.adapter.SearchImageAdapter
+import com.github.hanalee.searchimagewithpaging3.view.adapter.SearchImageLoadStateAdapter
 import org.koin.dsl.module
 
 val adapterModule = module {
-    // ex
-    single { MainAdapter() }
-    single { SubAdapter() } // 한번만 생성
+    single { SearchImageAdapter() }
+    single { SearchImageLoadStateAdapter() }
 }
