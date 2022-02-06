@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Custom"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.github.hanalee.searchimagewithpaging3.view.MainActivity"
+            android:name="com.github.hanalee.searchimagewithpaging3.view.activity.MainActivity"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LoadImageActivity"
+            android:name=".view.activity.LoadFullSizeImageActivity"
             android:exported="false"
             android:launchMode="singleTask" />
     </application>
