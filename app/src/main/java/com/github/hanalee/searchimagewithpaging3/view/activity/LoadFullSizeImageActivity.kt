@@ -3,6 +3,7 @@ package com.github.hanalee.searchimagewithpaging3.view.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.github.hanalee.searchimagewithpaging3.R
 import com.github.hanalee.searchimagewithpaging3.databinding.ActivityLoadImageBinding
 import com.github.hanalee.searchimagewithpaging3.domain.remote_data_source.entity.response.SearchImageResponse
 import com.github.hanalee.searchimagewithpaging3.utility.extension.toVisible
@@ -19,7 +20,11 @@ class LoadFullSizeImageActivity : AppCompatActivity() {
     private fun initView() = with(binding) {
         val item = intent.getParcelableExtra<SearchImageResponse.Document>("item")
 
-        Glide.with(this@LoadFullSizeImageActivity).load(item!!.imageUrl).thumbnail(0.1f)
+        Glide.with(this@LoadFullSizeImageActivity)
+            .load(item!!.imageUrl)
+            .placeholder(R.drawable.ic_launcher_foreground)
+            .error(R.drawable.ic_load_error)
+            .thumbnail(0.1f)
             .into(ivLoadImage)
 
         if (item.displaySitename.isNotEmpty()) {
