@@ -15,7 +15,7 @@ class SearchImageViewHolder(private val binding: RecyclerItemBinding) :
     fun binds(item: SearchImageResponse.Document) {
         binding.apply {
             Glide.with(ivContainer.context)
-                .load(item.imageUrl)
+                .load(item.thumbnailUrl)
                 .override(100)
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .thumbnail(0.1f)
